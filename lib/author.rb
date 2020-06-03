@@ -17,4 +17,8 @@ class Author
     def add_post_by_title(post_name)
     self.add_post(Post.new(post_name))
   end
+  
+    def self.post_count
+    Post.all.select {|x| x.author}.length
+  end
 end
